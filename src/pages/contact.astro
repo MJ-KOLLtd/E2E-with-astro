@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Contact | Esquare Estates"
+  description="Contact Esquare Estates about Oro Villas 2 in Bocaue, Bulacan. Get the price list, available blocks, and payment terms."
+  activeNav="contact"
+>
+<section class="page-hero">
+      <div class="container inner">
+        <span class="eyebrow center">Contact</span>
+        <h1>Let's talk about your lot.</h1>
+        <p>Send us a message and a property specialist will reply with pricing, available blocks, and payment terms.</p>
+      </div>
+    </section>
+
+    <section class="section bg-cream">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- CONTACT INFO -->
+          <div class="contact-info reveal">
+            <span class="eyebrow">Reach Us</span>
+            <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);margin:14px 0 18px">We're here to help.</h2>
+            <!-- TODO: replace all contact details with real ones -->
+            <div class="ci-item"><div class="ci-ico"><i class="fas fa-phone-alt"></i></div><div><b>Call us</b><a href="tel:+6321234567">+63 (2) 1234 5678</a></div></div>
+            <div class="ci-item"><div class="ci-ico"><i class="fab fa-viber"></i></div><div><b>Viber / Messenger</b><a href="#">Chat with a specialist</a></div></div>
+            <div class="ci-item"><div class="ci-ico"><i class="fas fa-envelope"></i></div><div><b>Email</b><a href="mailto:hello@esquareestates.com">hello@esquareestates.com</a></div></div>
+            <div class="ci-item"><div class="ci-ico"><i class="fas fa-map-pin"></i></div><div><b>Site address</b><span>Oro Villas 2, Brgy. Wakas, Bocaue, Bulacan</span></div></div>
+            <div class="ci-item"><div class="ci-ico"><i class="fas fa-clock"></i></div><div><b>Office hours</b><span>Mon–Sat, 9:00 AM – 6:00 PM</span></div></div>
+          </div>
+
+          <!-- FORM -->
+          <!-- NOTE: connect this form to a real handler (Formspree, HubSpot, GTM event, or your CRM). -->
+          <div class="contact-form reveal" id="contactForm">
+            <h3 style="font-size:1.5rem;margin-bottom:6px">Send an inquiry</h3>
+            <p style="color:var(--ink-600);font-size:.92rem;margin-bottom:20px">Fields marked * are required.</p>
+            <div class="form-group"><label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--navy-800);margin-bottom:7px;text-transform:uppercase">Full name *</label><input type="text" placeholder="Juan Dela Cruz"></div>
+            <div class="field-row">
+              <div class="form-group"><label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--navy-800);margin-bottom:7px;text-transform:uppercase">Mobile *</label><input type="tel" placeholder="0917 000 0000"></div>
+              <div class="form-group"><label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--navy-800);margin-bottom:7px;text-transform:uppercase">Email</label><input type="email" placeholder="you@email.com"></div>
+            </div>
+            <div class="form-group"><label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--navy-800);margin-bottom:7px;text-transform:uppercase">Message</label><textarea rows="4" placeholder="Tell us which lot you're interested in and when you're planning to buy."></textarea></div>
+            <a href="#" class="btn btn-primary">Send my inquiry <i class="fas fa-paper-plane"></i></a>
+            <p style="font-size:.76rem;color:var(--ink-400);text-align:center;margin-top:14px">By submitting, you agree to be contacted about Esquare Estates projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="section bg-white" style="padding-top:0">
+      <div class="container">
+        <div class="map-embed reveal">
+          <!-- TODO (recommended): replace this iframe with the EXACT embed for your site.
+               Google Maps → search your location → Share → "Embed a map" → Copy HTML → paste the
+               <iframe> here (the CSS controls its size). Verify the pin sits on your actual site,
+               or use precise coordinates: q=14.79,120.92 -->
+          <iframe
+            src="https://www.google.com/maps?q=Oro%20Villas%202%2C%20Brgy.%20Wakas%2C%20Bocaue%2C%20Bulacan&z=15&output=embed"
+            title="Oro Villas 2 — Brgy. Wakas, Bocaue, Bulacan"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <div class="map-actions">
+            <span><i class="fas fa-location-dot"></i> Oro Villas 2 · Brgy. Wakas, Bocaue, Bulacan</span>
+            <a class="btn-link" target="_blank" rel="noopener"
+               href="https://www.google.com/maps/dir/?api=1&destination=Oro%20Villas%202%2C%20Brgy.%20Wakas%2C%20Bocaue%2C%20Bulacan">Get directions <i class="fas fa-arrow-right arr"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+</BaseLayout>

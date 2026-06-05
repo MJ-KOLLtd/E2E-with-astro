@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="About | Esquare Estates"
+  description="Esquare Estates is a Filipino real estate developer building accessible, flood-free communities in Bulacan."
+  activeNav="about"
+>
+<section class="page-hero">
+      <div class="container inner">
+        <span class="eyebrow center">About Us</span>
+        <h1>Building communities that grow in value.</h1>
+        <p>We develop accessible, flood-free, well-located residential communities — and we plan them for the long term.</p>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section bg-cream">
+      <div class="container">
+        <div class="story-grid">
+          <div class="reveal">
+            <span class="eyebrow">Our Story</span>
+            <h2 style="font-size:clamp(2rem,3.6vw,2.85rem);margin:16px 0 16px">A trusted partner for property in Bulacan.</h2>
+            <!-- TODO: replace with your real company story / verified milestones -->
+            <p>Esquare Estates is a Filipino real estate developer focused on practical, dependable residential communities. Our approach is simple: choose locations that will appreciate, design layouts people actually want to live in, and build infrastructure that lasts.</p>
+            <p>Backed by a development group with a 15-year track record across Quezon City and Bulacan — and a portfolio of sold-out communities — we help families and investors buy with confidence.</p>
+            <a href="/projects/" class="btn btn-ghost" style="margin-top:8px">See our communities <i class="fas fa-arrow-right arr"></i></a>
+          </div>
+          <div class="story-visual reveal">
+            <!-- TODO: replace with a real community / team / aerial photo -->
+            <div class="ph-icon"><i class="fas fa-people-roof"></i><span>Company Photo</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="trustbar">
+      <div class="container">
+        <!-- TODO: confirm these figures are publicly usable -->
+        <div class="tb-item"><b>15+</b><span>Years developing</span></div>
+        <div class="tb-item"><b>500+</b><span>Homes turned over</span></div>
+        <div class="tb-item"><b>120k+</b><span>sqm developed</span></div>
+        <div class="tb-seal"><i class="fas fa-shield-halved"></i> SEC-Registered Filipino developer</div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">What We Stand For</span>
+          <h2>The values behind every lot.</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card reveal"><div class="wc-ico"><i class="fas fa-handshake"></i></div><h3>Trust</h3><p>Transparent dealings, clear terms, and commitments we deliver on.</p></div>
+          <div class="why-card reveal"><div class="wc-ico"><i class="fas fa-medal"></i></div><h3>Quality</h3><p>Dependable infrastructure and standards maintained over the long term.</p></div>
+          <div class="why-card reveal"><div class="wc-ico"><i class="fas fa-location-dot"></i></div><h3>Location-led</h3><p>We buy where access and growth meet — so your asset appreciates.</p></div>
+          <div class="why-card reveal"><div class="wc-ico"><i class="fas fa-people-group"></i></div><h3>Community</h3><p>Master-planned neighborhoods designed for real, everyday Filipino life.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Let's build your next chapter.</h2>
+        <p>Talk to a property specialist about Oro Villas 2 and what's coming next.</p>
+        <a href="/contact/" class="btn btn-dark btn-lg">Get in touch <i class="fas fa-arrow-right arr"></i></a>
+      </div>
+    </section>
+</BaseLayout>

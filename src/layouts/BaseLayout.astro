@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title:       string;
+  description?: string;
+  activeNav?:  string;
+}
+
+const {
+  title,
+  description = 'Esquare Estates — Flood-free residential lots in Bocaue, Bulacan. Minutes from the Philippine Arena, NLEx access, strong appreciation.',
+  activeNav = '',
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <span class="pulse"><span class="dot"></span> Now Pre-Selling · Oro Villas 2, Bocaue — limited lots available</span>
+      <div class="tb-right">
+        <a class="tb-hide" href="tel:+6321234567"><i class="fas fa-phone-alt"></i> +63 (2) 1234 5678</a>
+        <a href="#"><i class="fab fa-viber"></i> Chat on Viber</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <div class="logo-area">
+        <a href="/"><img src="/e2e-logo-white.png" alt="Esquare Estates" class="brand-logo"></a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="/"                    class={activeNav === 'home'     ? 'active' : ''}>Home</a></li>
+          <li><a href="/projects/"           class={activeNav === 'projects' ? 'active' : ''}>Projects</a></li>
+          <li><a href="/about/"              class={activeNav === 'about'    ? 'active' : ''}>About</a></li>
+          <li><a href="/events/"             class={activeNav === 'events'   ? 'active' : ''}>Events</a></li>
+          <li><a href="/blog/"               class={activeNav === 'blog'     ? 'active' : ''}>Blog</a></li>
+          <li><a href="/contact/"            class={activeNav === 'contact'  ? 'active' : ''}>Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="/contact/" class="btn btn-primary">Inquire Now <i class="fas fa-arrow-right arr"></i></a>
+          <div class="mobile-menu-icon"><i class="fas fa-bars"></i></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT (injected by each page) -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/e2e-logo-white.png" alt="Esquare Estates" class="brand-logo">
+          <p>Building sustainable communities, one lot at a time. Your trusted partner for residential property in Bulacan.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Viber"><i class="fab fa-viber"></i></a>
+            <a href="#" aria-label="Messenger"><i class="fab fa-facebook-messenger"></i></a>
+          </div>
+        </div>
+        <div class="footer-links"><h4>Explore</h4><ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/events/">Events</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul></div>
+        <div class="footer-links"><h4>Project</h4><ul>
+          <li><a href="/projects/oro-villas/">Oro Villas 2</a></li>
+          <li><a href="/contact/">Get price list</a></li>
+          <li><a href="/contact/">Reserve a lot</a></li>
+          <li><a href="/events/">Launch event</a></li>
+        </ul></div>
+        <div class="footer-contact"><h4>Connect</h4>
+          <!-- TODO: replace with real contact details -->
+          <p><i class="fas fa-envelope"></i> hello@esquareestates.com</p>
+          <p><i class="fas fa-phone-alt"></i> +63 (2) 1234 5678</p>
+          <p><i class="fas fa-map-pin"></i> Oro Villas 2, Brgy. Wakas, Bocaue, Bulacan</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© {new Date().getFullYear()} Esquare Estates — A Smart Start for Your Future.</p>
+        <p>SEC-Registered Developer · Pre-selling prices subject to change without prior notice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a class="mc-call" href="tel:+6321234567"><i class="fas fa-phone-alt"></i> Call</a>
+    <a class="mc-inq" href="/contact/"><i class="fas fa-arrow-right"></i> Inquire</a>
+  </div>
+
+  <script>
+    document.querySelector('.mobile-menu-icon')
+      ?.addEventListener('click', () => document.querySelector('.nav-list')?.classList.toggle('show'));
+    const h = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => h?.classList.toggle('scrolled', window.scrollY > 30));
+    const io = new IntersectionObserver(
+      (es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

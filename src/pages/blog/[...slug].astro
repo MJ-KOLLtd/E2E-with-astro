@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props:  { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const formattedDate = post.data.pubDate.toLocaleDateString('en-PH', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+---
+<BaseLayout
+  title={`${post.data.title} | Esquare Estates`}
+  description={post.data.description}
+  activeNav="blog"
+>
+  <div class="blog-post">
+    <header class="blog-post-header">
+      <span class="eyebrow"><a href="/blog/" style="color:inherit">Blog</a></span>
+      <h1>{post.data.title}</h1>
+      <div class="blog-post-meta">
+        <span><i class="fas fa-calendar-alt"></i> {formattedDate}</span>
+        <span><i class="fas fa-user"></i> {post.data.author}</span>
+        {post.data.tags && post.data.tags.map(tag => (
+          <span style="background:var(--gold-100);color:var(--gold-600);padding:3px 10px;border-radius:20px;font-weight:600;font-size:.78rem">{tag}</span>
+        ))}
+      </div>
+    </header>
+
+    {post.data.image && (
+      <img src={post.data.image} alt={post.data.title}
+           style="width:100%;border-radius:var(--r-lg);margin-bottom:40px;box-shadow:var(--sh-lg)"/>
+    )}
+
+    <div class="blog-content">
+      <Content />
+    </div>
+
+    <!-- CTA inside every blog post — high-converting for real estate -->
+    <div class="blog-cta">
+      <h3>Interested in Oro Villas 2?</h3>
+      <p>Get the official price list, site map, and payment terms from a property specialist.</p>
+      <a href="/contact/" class="btn btn-primary btn-lg">Inquire now <i class="fas fa-arrow-right arr"></i></a>
+    </div>
+
+    <div style="text-align:center;margin-top:32px">
+      <a href="/blog/" class="btn-link"><i class="fas fa-arrow-left" style="transform:scaleX(-1)"></i> Back to all posts</a>
+    </div>
+  </div>
+</BaseLayout>
