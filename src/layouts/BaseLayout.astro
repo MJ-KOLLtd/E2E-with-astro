@@ -91,8 +91,19 @@ const organizationJsonLd = {
       <div class="logo-area">
         <a href="/"><img src="/e2e-logo-white.png" alt="ESQUARE ESTATES" class="brand-logo"></a>
       </div>
-      <nav class="main-nav">
-        <ul class="nav-list">
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mainNavList"
+      >
+        <i class="fas fa-bars icon-open" aria-hidden="true"></i>
+        <i class="fas fa-times icon-close" aria-hidden="true"></i>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list" id="mainNavList">
           <li><a href="/"                    class={activeNav === 'home'     ? 'active' : ''}>Home</a></li>
           <li><a href="/projects/"           class={activeNav === 'projects' ? 'active' : ''}>Projects</a></li>
           <li><a href="/about/"              class={activeNav === 'about'    ? 'active' : ''}>About</a></li>
@@ -102,10 +113,10 @@ const organizationJsonLd = {
         </ul>
         <div class="nav-cta">
           <a href="/contact/" class="btn btn-primary">Schedule a Viewing <i class="fas fa-arrow-right arr"></i></a>
-          <div class="mobile-menu-icon"><i class="fas fa-bars"></i></div>
         </div>
       </nav>
     </div>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
   </header>
 
   <main>
@@ -156,7 +167,7 @@ const organizationJsonLd = {
 
       <div class="footer-bottom">
         <p class="footer-copy">© {new Date().getFullYear()} ESQUARE ESTATES. All rights reserved.</p>
-        <p class="footer-meta">Metro Manila · Metrostar Realty &amp; Development Inc.</p>
+        <p class="footer-meta">Metro Manila · Quezon City, Philippines</p>
       </div>
     </div>
   </footer>
@@ -167,8 +178,31 @@ const organizationJsonLd = {
   </div>
 
   <script>
-    document.querySelector('.mobile-menu-icon')
-      ?.addEventListener('click', () => document.querySelector('.nav-list')?.classList.toggle('show'));
+    const menuToggle = document.getElementById('mobileMenuToggle');
+    const mainNav = document.getElementById('mainNav');
+    const navBackdrop = document.getElementById('mobileNavBackdrop');
+    const navLinks = document.querySelectorAll('#mainNavList a');
+
+    const setMenuOpen = (open) => {
+      mainNav?.classList.toggle('open', open);
+      navBackdrop?.classList.toggle('open', open);
+      menuToggle?.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuToggle?.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.body.classList.toggle('nav-open', open);
+    };
+
+    menuToggle?.addEventListener('click', () => {
+      setMenuOpen(!mainNav?.classList.contains('open'));
+    });
+    navBackdrop?.addEventListener('click', () => setMenuOpen(false));
+    navLinks.forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) setMenuOpen(false);
+    });
+
     const h = document.getElementById('siteHeader');
     window.addEventListener('scroll', () => h?.classList.toggle('scrolled', window.scrollY > 30));
     const io = new IntersectionObserver(

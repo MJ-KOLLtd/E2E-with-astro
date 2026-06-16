@@ -36,7 +36,7 @@ const nineHandelHomes: Project = {
       rows: [
         { label: 'Location', value: 'Don Jose Heights' },
         { label: 'Units', value: '2 only' },
-        { label: 'Developer', value: 'Metrostar Realty' },
+        { label: 'Developer', value: 'ESQUARE ESTATES' },
       ],
     },
   },
@@ -60,11 +60,11 @@ const nineHandelHomes: Project = {
     eyebrow: 'About the Development',
     headline: 'Japanese-inspired elegance in the heart of Quezon City.',
     paragraphs: [
-      'Welcome to 9 Handel Homes, the latest premium development by Metrostar Realty and Development Inc., situated inside Don Jose Heights, Quezon City.',
+      'Welcome to 9 Handel Homes, the latest premium development by ESQUARE ESTATES, situated inside Don Jose Heights, Quezon City.',
       'This exclusive two-unit townhouse project is designed with inspiration from Japanese architecture and modern contemporary design, featuring light colors and minimalist aesthetics that create a harmonious blend of elegance and simplicity.',
     ],
     features: [
-      'Premium development by Metrostar Realty and Development Inc.',
+      'Premium development by ESQUARE ESTATES',
       'Located in Don Jose Heights, Quezon City',
       'Exclusive two-unit development',
       'Japanese-inspired architecture with modern contemporary design',

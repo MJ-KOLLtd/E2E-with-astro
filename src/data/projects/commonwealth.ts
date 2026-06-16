@@ -36,7 +36,7 @@ const commonwealth: Project = {
       rows: [
         { label: 'Location', value: 'Ciudad Regina' },
         { label: 'Units', value: '2 only' },
-        { label: 'Developer', value: 'Metrostar Realty' },
+        { label: 'Developer', value: 'ESQUARE ESTATES' },
       ],
     },
   },
@@ -60,11 +60,11 @@ const commonwealth: Project = {
     eyebrow: 'About the Development',
     headline: 'A sanctuary of refined contemporary living.',
     paragraphs: [
-      'Welcome to ESQUARE ESTATES Commonwealth, the latest premium development by Metrostar Realty & Development Inc., nestled in the heart of Ciudad Regina, Quezon City.',
+      'Welcome to ESQUARE ESTATES Commonwealth, the latest premium development by ESQUARE ESTATES, nestled in the heart of Ciudad Regina, Quezon City.',
       'This exclusive two-unit enclave features modern contemporary townhouses, thoughtfully designed with a sleek minimalist aesthetic and a refined palette of light hues. The result is a harmonious blend of elegance and simplicity, creating a sophisticated yet welcoming living space tailored for modern lifestyles.',
     ],
     features: [
-      'Premium development by Metrostar Realty & Development Inc.',
+      'Premium development by ESQUARE ESTATES',
       'Located in Ciudad Regina, Quezon City',
       'Exclusive two-unit development',
       'Modern contemporary architecture with minimalist aesthetic',

@@ -7,7 +7,7 @@ image: "/images/commonwealth/page01-img2.jpeg"
 tags: ["quezon city", "townhouse", "investment", "premium"]
 ---
 
-**ESQUARE ESTATES Commonwealth**, developed by **Metrostar Realty & Development Inc.**, is a premium townhouse project tucked inside one of Quezon City's most established private villages: **Ciudad Regina**.
+**ESQUARE ESTATES Commonwealth**, developed by **ESQUARE ESTATES**, is a premium townhouse project tucked inside one of Quezon City's most established private villages: **Ciudad Regina**.
 
 This is not a mass-market development. There are only two units. And that exclusivity is exactly the point.
 
