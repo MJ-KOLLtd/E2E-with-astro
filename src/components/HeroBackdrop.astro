@@ -1,0 +1,22 @@
+---
+interface Props {
+  render?: string;
+  texture?: boolean;
+  topo?: boolean;
+}
+
+const { render, texture = true, topo = true } = Astro.props;
+---
+<div class="hero-bg-fixed" aria-hidden="true">
+  {render && <img class="hero-bg-render" src={render} alt="" loading="eager" />}
+  <div class="hero-bg-overlay"></div>
+  {texture && <div class="hero-bg-texture"></div>}
+</div>
+{topo && (
+  <svg class="hero-topo" viewBox="0 0 560 560" aria-hidden="true">
+    <rect x="40" y="40" width="480" height="480" rx="120" transform="rotate(8 280 280)"/>
+    <rect x="95" y="95" width="370" height="370" rx="95" transform="rotate(8 280 280)"/>
+    <rect x="150" y="150" width="260" height="260" rx="70" transform="rotate(8 280 280)"/>
+    <rect x="205" y="205" width="150" height="150" rx="45" transform="rotate(8 280 280)"/>
+  </svg>
+)}

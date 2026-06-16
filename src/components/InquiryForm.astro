@@ -1,0 +1,271 @@
+---
+interface Props {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  subject?: string;
+  variant?: 'card' | 'lead';
+  showInquiryType?: boolean;
+  class?: string;
+}
+
+const {
+  id = 'inquiry',
+  title = 'Send us a message',
+  subtitle = 'All fields marked * are required. We reply within 1 business day.',
+  subject = 'ESQUARE ESTATES Inquiry',
+  variant = 'card',
+  showInquiryType = true,
+  class: className = '',
+} = Astro.props;
+
+const formId = `${id}Form`;
+const wrapId = `${id}Wrap`;
+const successId = `${id}Success`;
+const errorId = `${id}Error`;
+const submitId = `${id}Submit`;
+const btnTextId = `${id}BtnText`;
+const btnIconId = `${id}BtnIcon`;
+const btnSpinnerId = `${id}BtnSpinner`;
+const wrapperClass = [
+  variant === 'lead' ? 'lead-form inquiry-form' : 'form-card inquiry-form',
+  className,
+].filter(Boolean).join(' ');
+---
+
+<div class={wrapperClass}>
+  <div id={wrapId}>
+    <h3>{title}</h3>
+    <p class={variant === 'lead' ? 'lf-sub' : 'sub'}>{subtitle}</p>
+
+    <div class="form-error-msg" id={errorId}>
+      Something went wrong. Please try again or message us on Viber.
+    </div>
+
+    <form id={formId} novalidate>
+      <input type="hidden" name="_subject" value={subject}>
+
+      <div class={showInquiryType ? 'form-row field-row' : 'form-row'}>
+        <div class="field">
+          <label for={`${id}-name`}>Full Name *</label>
+          <input type="text" id={`${id}-name`} name="name" placeholder="Juan dela Cruz" required>
+        </div>
+        <div class="field">
+          <label for={`${id}-phone`}>Phone / Viber *</label>
+          <input type="tel" id={`${id}-phone`} name="phone" placeholder="+63 9XX XXX XXXX" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for={`${id}-email`}>Email Address *</label>
+        <input type="email" id={`${id}-email`} name="email" placeholder="juan@email.com" required>
+      </div>
+
+      {showInquiryType && (
+        <div class="field">
+          <label for={`${id}-type`}>What can we help you with? *</label>
+          <select id={`${id}-type`} name="inquiry_type" required>
+            <option value="" disabled selected>Select an option...</option>
+            <option value="Viewing request">Schedule a private viewing</option>
+            <option value="Price list request">Project details &amp; availability</option>
+            <option value="Reservation inquiry">Reservation inquiry</option>
+            <option value="Accreditation - broker">Broker / agent accreditation</option>
+            <option value="Partnership - investor">Investor partnership</option>
+            <option value="General inquiry">General question</option>
+          </select>
+        </div>
+      )}
+
+      <div class="field">
+        <label for={`${id}-msg`}>Message</label>
+        <textarea id={`${id}-msg`} name="message" rows="3" placeholder="Tell us your preferred viewing date, or ask anything about ESQUARE ESTATES Commonwealth..."></textarea>
+      </div>
+
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+      <button type="submit" class="btn-submit" id={submitId}>
+        <span id={btnTextId}>Send Message</span>
+        <i class="fas fa-arrow-right" id={btnIconId}></i>
+        <i class="fas fa-spinner fa-spin" id={btnSpinnerId} style="display:none"></i>
+      </button>
+    </form>
+  </div>
+
+  <div class="form-success" id={successId}>
+    <div class="check"><i class="fas fa-check"></i></div>
+    <h4>Message received!</h4>
+    <p>Thanks for reaching out. A property specialist from ESQUARE ESTATES will contact you within 1 business day — usually sooner.</p>
+    <p class="form-success-note">While you wait, you can <a href="/projects/commonwealth/">browse ESQUARE ESTATES Commonwealth →</a></p>
+  </div>
+
+  {variant === 'lead' && (
+    <p class="fineprint">By submitting, you agree to be contacted about ESQUARE ESTATES projects.</p>
+  )}
+</div>
+
+<script define:vars={{ formId, wrapId, successId, errorId, submitId, btnTextId, btnIconId, btnSpinnerId }}>
+  const form     = document.getElementById(formId);
+  const wrap     = document.getElementById(wrapId);
+  const success  = document.getElementById(successId);
+  const errorMsg = document.getElementById(errorId);
+  const btn      = document.getElementById(submitId);
+  const btnText  = document.getElementById(btnTextId);
+  const btnIcon  = document.getElementById(btnIconId);
+  const spinner  = document.getElementById(btnSpinnerId);
+
+  if (!form || !wrap || !success || !btn) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    btn.disabled = true;
+    if (btnText) btnText.textContent = 'Sending...';
+    if (btnIcon) btnIcon.style.display = 'none';
+    if (spinner) spinner.style.display = 'inline-block';
+    errorMsg?.classList.remove('show');
+
+    try {
+      const res = await fetch('https://formspree.io/f/mqeoaykr', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+      });
+
+      if (res.ok) {
+        wrap.style.display = 'none';
+        success.classList.add('show');
+        const fineprint = wrap.closest('.inquiry-form')?.querySelector('.fineprint');
+        if (fineprint) fineprint.style.display = 'none';
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      errorMsg?.classList.add('show');
+      btn.disabled = false;
+      if (btnText) btnText.textContent = 'Send Message';
+      if (btnIcon) btnIcon.style.display = 'inline-block';
+      if (spinner) spinner.style.display = 'none';
+    }
+  });
+</script>
+
+<style>
+  .inquiry-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 600px) {
+    .inquiry-form .form-row { grid-template-columns: 1fr; }
+  }
+  .inquiry-form .form-error-msg {
+    background: #fff3f3;
+    border: 1px solid #f5c6c6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #c0392b;
+    font-size: .9rem;
+    margin-bottom: 16px;
+    display: none;
+  }
+  .inquiry-form .form-error-msg.show { display: block; }
+  .inquiry-form .form-success { display: none; text-align: center; padding: 48px 24px; }
+  .inquiry-form .form-success.show { display: block; }
+  .inquiry-form .form-success .check {
+    width: 64px; height: 64px;
+    background: #e8f7ee;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+    color: #2da05a;
+  }
+  .inquiry-form .form-success h4 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--navy-800);
+    margin-bottom: 8px;
+  }
+  .inquiry-form .form-success p { color: var(--ink-600); font-size: .95rem; }
+  .inquiry-form .form-success-note {
+    margin-top: 16px;
+    font-size: .85rem;
+    color: var(--ink-600);
+  }
+  .inquiry-form .form-success-note a {
+    color: var(--gold-600);
+    font-weight: 600;
+  }
+  .inquiry-form .btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--gold-500);
+    color: var(--navy-900);
+    border: none;
+    border-radius: 12px;
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .02em;
+    cursor: pointer;
+    transition: background .2s, transform .15s;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .inquiry-form .btn-submit:hover { background: var(--gold-600); transform: translateY(-1px); }
+  .inquiry-form .btn-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+  .inquiry-form.form-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 44px 40px;
+    box-shadow: 0 4px 40px rgba(2,38,75,.10);
+    border: 1px solid rgba(2,38,75,.06);
+  }
+  @media (max-width: 600px) {
+    .inquiry-form.form-card { padding: 28px 20px; }
+  }
+  .inquiry-form.form-card h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--navy-800);
+    margin-bottom: 6px;
+  }
+  .inquiry-form.form-card .sub {
+    color: var(--ink-600);
+    font-size: .92rem;
+    margin-bottom: 28px;
+  }
+  .inquiry-form.lead-form .field input,
+  .inquiry-form.lead-form .field select,
+  .inquiry-form.lead-form .field textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1.5px solid var(--line);
+    border-radius: var(--r-sm);
+    font-family: var(--sans);
+    font-size: .97rem;
+    color: var(--ink);
+    background: #fff;
+  }
+  .inquiry-form.lead-form .field input:focus,
+  .inquiry-form.lead-form .field select:focus,
+  .inquiry-form.lead-form .field textarea:focus {
+    outline: none;
+    border-color: var(--gold-500);
+    box-shadow: 0 0 0 4px rgba(255,184,66,.18);
+  }
+  .inquiry-form.lead-form .fineprint {
+    font-size: .76rem;
+    color: var(--ink-400);
+    text-align: center;
+    margin-top: 14px;
+  }
+</style>

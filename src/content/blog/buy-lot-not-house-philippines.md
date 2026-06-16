@@ -3,6 +3,7 @@ title: "Why Buying a Lot — Not a House — Makes More Sense for Most Filipino 
 description: "A house locks you into one design, one builder, and one moment in time. A lot gives you control. Here's why more Filipino families are choosing to buy land first."
 pubDate: 2026-06-10
 author: "Esquare Estates"
+image: "/images/commonwealth/page03-img2.jpeg"
 tags: ["investment", "tips", "first-time buyers"]
 ---
 
@@ -56,4 +57,4 @@ It makes less sense if you need to move in immediately and don't have the budget
 
 ---
 
-*Oro Villas 2 in Bocaue, Bulacan offers residential lots from 60–100 sqm at pre-selling prices. Contact us to learn more.*
+*ESQUARE ESTATES Commonwealth offers an exclusive two-unit townhouse enclave in Ciudad Regina, Quezon City. [Schedule a viewing](/contact/) to learn more.*

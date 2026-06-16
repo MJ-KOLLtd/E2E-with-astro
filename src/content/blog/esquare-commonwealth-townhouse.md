@@ -1,12 +1,13 @@
 ---
 title: "Esquare Estates Commonwealth: A Premium Townhouse Inside Quezon City's Most Secure Village"
-description: "Discover Esquare Estates Commonwealth — an exclusive two-unit, 4-bedroom modern contemporary townhouse by Metrostar Realty inside Ciudad Regina, Quezon City."
+description: "Discover Esquare Estates Commonwealth — an exclusive two-unit, 4-bedroom modern contemporary townhouse by ESQUARE ESTATES inside Ciudad Regina, Quezon City."
 pubDate: 2026-06-06
 author: "Esquare Estates"
+image: "/images/commonwealth/page01-img1.jpeg"
 tags: ["quezon city", "townhouse", "investment", "premium"]
 ---
 
-When most people think of Esquare Estates, they think of Bulacan — flood-free lots, McArthur Highway, the Philippine Arena corridor. But the brand's roots go deeper. **Esquare Estates Commonwealth**, developed by **Metrostar Realty & Development Inc.**, is a premium townhouse project tucked inside one of Quezon City's most established private villages: **Ciudad Regina**.
+**Esquare Estates Commonwealth**, developed by **ESQUARE ESTATES**, is a premium townhouse project tucked inside one of Quezon City's most established private villages: **Ciudad Regina**.
 
 This is not a mass-market development. There are only two units. And that exclusivity is exactly the point.
 

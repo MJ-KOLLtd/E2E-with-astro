@@ -1,68 +1,38 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBackdrop from '../components/HeroBackdrop.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
 ---
 <BaseLayout
-  title="Projects | Esquare Estates"
-  description="Explore residential communities by Esquare Estates. Now pre-selling: Oro Villas 2 in Bocaue, Bulacan."
+  title="Projects | ESQUARE ESTATES"
+  description="Explore premium residential developments by ESQUARE ESTATES — ESQUARE ESTATES Commonwealth in Ciudad Regina and 9 Handel Homes in Don Jose Heights, Quezon City."
   activeNav="projects"
 >
-<section class="page-hero">
-      <div class="container inner">
-        <span class="eyebrow center">Our Communities</span>
-        <h1>Projects by Esquare Estates</h1>
-        <p>Flood-free, master-planned residential communities across Bulacan — one selling now, with more on the way.</p>
+    <section class="page-hero has-render has-texture">
+      <HeroBackdrop render="/images/commonwealth/page01-img1.jpeg" />
+      <div class="container inner hero-glass">
+        <span class="eyebrow center">Our Projects</span>
+        <h1>Curated homes for the discerning few.</h1>
+        <p>Masterfully designed developments that blend architectural excellence, personalized experiences, and environmental harmony.</p>
       </div>
     </section>
 
     <section class="section bg-cream">
       <div class="container">
         <div class="projects-grid" style="margin-top:0">
-          <article class="project-card reveal">
-            <div class="project-img"><span class="proj-tag">Pre-selling</span><i class="fas fa-tree-city"></i></div>
-            <div class="project-content">
-              <div class="pc-loc"><i class="fas fa-location-dot"></i> Brgy. Wakas, Bocaue, Bulacan</div>
-              <h3>Oro Villas 2</h3>
-              <p>A flood-free, master-planned community along McArthur Highway — minutes from the Philippine Arena, with NLEx access and strong appreciation potential.</p>
-              <div class="project-meta">
-                <div class="pm"><b>60–100 sqm</b><span>Lot cuts</span></div>
-                <div class="pm"><b>Pre-selling</b><span>Status</span></div>
-                <div class="pm"><b>Flexible</b><span>Terms</span></div>
-              </div>
-              <a href="/projects/oro-villas/" class="btn btn-primary">View community <i class="fas fa-arrow-right arr"></i></a>
-            </div>
-          </article>
-
-          <!-- TODO: replace these placeholders with real upcoming projects (or remove) -->
-          <article class="project-card reveal">
-            <div class="project-img"><span class="proj-tag soon">Coming soon</span><i class="fas fa-drafting-compass"></i></div>
-            <div class="project-content">
-              <div class="pc-loc"><i class="fas fa-location-dot"></i> Bulacan</div>
-              <h3>New Community</h3>
-              <p>Our next master-planned development. Register your interest to get first access and launch pricing before public release.</p>
-              <div class="project-meta"><div class="pm"><b>TBA</b><span>Details</span></div></div>
-              <a href="/contact/" class="btn btn-ghost">Get notified <i class="fas fa-arrow-right arr"></i></a>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-img"><span class="proj-tag soon">Coming soon</span><i class="fas fa-drafting-compass"></i></div>
-            <div class="project-content">
-              <div class="pc-loc"><i class="fas fa-location-dot"></i> Bulacan</div>
-              <h3>New Community</h3>
-              <p>More residential lots in emerging, high-growth areas. Early buyers get the best positions and prices.</p>
-              <div class="project-meta"><div class="pm"><b>TBA</b><span>Details</span></div></div>
-              <a href="/contact/" class="btn btn-ghost">Get notified <i class="fas fa-arrow-right arr"></i></a>
-            </div>
-          </article>
+          {projects.map((project) => (
+            <ProjectCard project={project} primary />
+          ))}
         </div>
       </div>
     </section>
 
     <section class="cta-band">
       <div class="container">
-        <h2>Found one you like?</h2>
-        <p>Get the price list, available blocks, and payment terms from a property specialist.</p>
-        <a href="/contact/" class="btn btn-dark btn-lg">Inquire now <i class="fas fa-arrow-right arr"></i></a>
+        <h2>Experience our developments in person.</h2>
+        <p>Schedule a private viewing with a property specialist.</p>
+        <a href="/contact/" class="btn btn-dark btn-lg">Schedule a Viewing <i class="fas fa-arrow-right arr"></i></a>
       </div>
     </section>
 </BaseLayout>

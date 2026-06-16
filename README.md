@@ -117,7 +117,7 @@ esquare-astro/
 │   │   ├── events.astro
 │   │   ├── contact.astro
 │   │   ├── projects/
-│   │   │   └── oro-villas.astro← /projects/oro-villas/
+│   │   │   └── commonwealth.astro← /projects/commonwealth/
 │   │   └── blog/
 │   │       ├── index.astro     ← /blog/ listing (auto-generated)
 │   │       └── [...slug].astro ← /blog/post-name/ (auto-generated per post)
@@ -138,7 +138,7 @@ Search the codebase for `TODO` comments. Key ones:
 
 - All contact details (phone, email, Viber link) — in `BaseLayout.astro`
 - Social media links (Facebook, Viber, Messenger) — in `BaseLayout.astro`
-- Google Maps exact embed — in `src/pages/contact.astro` and `src/pages/projects/oro-villas.astro`
+- Google Maps exact embed — in `src/pages/contact.astro` and `src/pages/projects/commonwealth.astro`
 - Developer track-record stats (15+ yrs, 500+ homes) — confirm these are publicly usable
 - `site:` URL in `astro.config.mjs` — set to your real domain
 
@@ -150,7 +150,7 @@ Search the codebase for `TODO` comments. Key ones:
 |----------|--------------|
 | index.html | / |
 | projects.html | /projects/ |
-| oro-villas.html | /projects/oro-villas/ |
+| oro-villas.html | /projects/commonwealth/ (301 redirect) |
 | about.html | /about/ |
 | events.html | /events/ |
 | contact.html | /contact/ |
@@ -159,6 +159,7 @@ Search the codebase for `TODO` comments. Key ones:
 
 If you've already shared the old `.html` links, add redirects in a `_redirects` file at the root:
 ```
-/oro-villas.html    /projects/oro-villas/    301
+/oro-villas.html    /projects/commonwealth/    301
+/projects/oro-villas/    /projects/commonwealth/    301
 /projects.html      /projects/               301
 ```

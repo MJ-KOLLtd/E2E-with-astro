@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroBackdrop from '../../components/HeroBackdrop.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -21,19 +22,22 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-PH', {
   description={post.data.description}
   activeNav="blog"
 >
-  <div class="blog-post">
-    <header class="blog-post-header">
-      <span class="eyebrow"><a href="/blog/" style="color:inherit">Blog</a></span>
+  <section class="page-hero has-render has-texture">
+    <HeroBackdrop render="/images/commonwealth/page02-img2.jpeg" />
+    <div class="container inner hero-glass">
+      <span class="eyebrow center"><a href="/blog/">Blog</a></span>
       <h1>{post.data.title}</h1>
       <div class="blog-post-meta">
         <span><i class="fas fa-calendar-alt"></i> {formattedDate}</span>
         <span><i class="fas fa-user"></i> {post.data.author}</span>
         {post.data.tags && post.data.tags.map(tag => (
-          <span style="background:var(--gold-100);color:var(--gold-600);padding:3px 10px;border-radius:20px;font-weight:600;font-size:.78rem">{tag}</span>
+          <span style="background:rgba(255,184,66,.18);color:var(--gold-300);padding:3px 10px;border-radius:20px;font-weight:600;font-size:.78rem">{tag}</span>
         ))}
       </div>
-    </header>
+    </div>
+  </section>
 
+  <div class="blog-post">
     {post.data.image && (
       <img src={post.data.image} alt={post.data.title}
            style="width:100%;border-radius:var(--r-lg);margin-bottom:40px;box-shadow:var(--sh-lg)"/>
@@ -44,9 +48,9 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-PH', {
     </div>
 
     <div class="blog-cta">
-      <h3>Interested in our properties?</h3>
-      <p>Get the official price list, site map, and payment terms from a property specialist.</p>
-      <a href="/contact/" class="btn btn-primary btn-lg">Inquire now <i class="fas fa-arrow-right arr"></i></a>
+      <h3>Interested in ESQUARE ESTATES Commonwealth?</h3>
+      <p>Schedule a private viewing and speak with a property specialist.</p>
+      <a href="/contact/" class="btn btn-primary btn-lg">Schedule a Viewing <i class="fas fa-arrow-right arr"></i></a>
     </div>
 
     <div style="text-align:center;margin-top:32px">
