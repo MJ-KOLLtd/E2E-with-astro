@@ -17,7 +17,7 @@ const {
   title,
   description = 'ESQUARE ESTATES — Premium residential developments in Metro Manila. Where your success finds its sanctuary.',
   activeNav = '',
-  ogImage = '/images/commonwealth/page01-img1.jpeg',
+  ogImage = '/images/commonwealth/page01-img2.jpeg',
   ogType = 'website',
   canonical,
   noindex = false,
@@ -74,10 +74,11 @@ const organizationJsonLd = {
   <slot name="head" />
 </head>
 <body>
+  <div class="site-bg" aria-hidden="true"></div>
 
   <div class="topbar">
     <div class="container">
-      <span class="pulse"><span class="dot"></span> ESQUARE ESTATES · Commonwealth &amp; 9 Handel Homes — exclusive two-unit townhouse developments in Quezon City</span>
+      <span class="topbar-announce"><strong>ESQUARE ESTATES</strong> · Commonwealth &amp; 9 Handel Homes — exclusive two-unit townhouse developments in Quezon City</span>
       <div class="tb-right">
         <a class="tb-hide" href="tel:+6321234567"><i class="fas fa-phone-alt"></i> +63 (2) 1234 5678</a>
         <a href="#"><i class="fab fa-viber"></i> Chat on Viber</a>
@@ -112,41 +113,50 @@ const organizationJsonLd = {
   </main>
 
   <footer class="site-footer">
+    <div class="footer-accent" aria-hidden="true"></div>
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
+      <div class="footer-main">
+        <div class="footer-brand-block">
           <img src="/e2e-logo-white.png" alt="ESQUARE ESTATES" class="brand-logo">
-          <p>Masterfully designed developments that blend architectural excellence, personalized experiences, and environmental harmony — designed for the discerning few.</p>
           <p class="footer-tagline">Where your success finds its sanctuary.</p>
-          <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Viber"><i class="fab fa-viber"></i></a>
-            <a href="#" aria-label="Messenger"><i class="fab fa-facebook-messenger"></i></a>
+        </div>
+
+        <div class="footer-nav-grid">
+          <div class="footer-col">
+            <h4>Projects</h4>
+            <ul class="footer-links">
+              <li><a href="/projects/commonwealth/">ESQUARE ESTATES Commonwealth</a></li>
+              <li><a href="/projects/9-handel-homes/">9 Handel Homes</a></li>
+              <li><a href="/projects/" class="footer-link-subtle">View all projects</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="footer-contact-list">
+              <li><a href="mailto:hello@esquareestates.com">hello@esquareestates.com</a></li>
+              <li><a href="tel:+6321234567">+63 (2) 1234 5678</a></li>
+              <li><span>Ciudad Regina &amp; Don Jose Heights, Quezon City</span></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="/about/">About</a></li>
+              <li><a href="/events/">Events</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-cta-col">
+            <h4>Private Viewings</h4>
+            <a href="/contact/" class="btn btn-outline footer-cta-btn">Schedule a Viewing <i class="fas fa-arrow-right arr"></i></a>
           </div>
         </div>
-        <div class="footer-links"><h4>Explore</h4><ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects/">Projects</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/events/">Events</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul></div>
-        <div class="footer-links"><h4>Projects</h4><ul>
-          <li><a href="/projects/commonwealth/">ESQUARE ESTATES Commonwealth</a></li>
-          <li><a href="/projects/9-handel-homes/">9 Handel Homes</a></li>
-          <li><a href="/contact/">Schedule a viewing</a></li>
-          <li><a href="/projects/">View all projects</a></li>
-        </ul></div>
-        <div class="footer-contact"><h4>Connect</h4>
-          <p><i class="fas fa-envelope"></i> hello@esquareestates.com</p>
-          <p><i class="fas fa-phone-alt"></i> +63 (2) 1234 5678</p>
-          <p><i class="fas fa-map-pin"></i> Ciudad Regina, Quezon City</p>
-        </div>
       </div>
+
       <div class="footer-bottom">
-        <p>© {new Date().getFullYear()} ESQUARE ESTATES — Where your success finds its sanctuary.</p>
-        <p>Premium residential developments in Metro Manila.</p>
+        <p class="footer-copy">© {new Date().getFullYear()} ESQUARE ESTATES. All rights reserved.</p>
+        <p class="footer-meta">Metro Manila · Metrostar Realty &amp; Development Inc.</p>
       </div>
     </div>
   </footer>

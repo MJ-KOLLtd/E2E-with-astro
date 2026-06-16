@@ -14,7 +14,7 @@ const commonwealth: Project = {
     title: 'ESQUARE ESTATES Commonwealth | Exclusive Townhouses in Ciudad Regina Quezon City',
     description:
       'Discover ESQUARE ESTATES Commonwealth, a limited two-unit townhouse development in Ciudad Regina, Quezon City, offering contemporary architecture, privacy, and premium living.',
-    ogImage: '/images/commonwealth/page01-img1.jpeg',
+    ogImage: '/images/commonwealth/page01-img2.jpeg',
   },
 
   hero: {
@@ -22,8 +22,8 @@ const commonwealth: Project = {
     headline: 'Exclusivity Redefined',
     subheadline:
       'A private two-unit contemporary townhouse enclave crafted for modern families seeking elegance, privacy, and enduring value.',
-    render: '/images/commonwealth/page01-img1.jpeg',
-    frameImage: '/images/commonwealth/page01-img1.jpeg',
+    render: '/images/commonwealth/page01-img2.jpeg',
+    frameImage: '/images/commonwealth/page01-img2.jpeg',
     frameAlt: 'ESQUARE ESTATES Commonwealth exterior rendering',
     tag: 'Ciudad Regina, Quezon City',
     trustStats: [
@@ -36,7 +36,7 @@ const commonwealth: Project = {
       rows: [
         { label: 'Location', value: 'Ciudad Regina' },
         { label: 'Units', value: '2 only' },
-        { label: 'Developer', value: 'ESQUARE ESTATES' },
+        { label: 'Developer', value: 'Metrostar Realty' },
       ],
     },
   },
@@ -60,17 +60,17 @@ const commonwealth: Project = {
     eyebrow: 'About the Development',
     headline: 'A sanctuary of refined contemporary living.',
     paragraphs: [
-      'Welcome to ESQUARE ESTATES Commonwealth, the latest premium development by ESQUARE ESTATES, nestled in the heart of Ciudad Regina, Quezon City.',
+      'Welcome to ESQUARE ESTATES Commonwealth, the latest premium development by Metrostar Realty & Development Inc., nestled in the heart of Ciudad Regina, Quezon City.',
       'This exclusive two-unit enclave features modern contemporary townhouses, thoughtfully designed with a sleek minimalist aesthetic and a refined palette of light hues. The result is a harmonious blend of elegance and simplicity, creating a sophisticated yet welcoming living space tailored for modern lifestyles.',
     ],
     features: [
-      'Premium development by ESQUARE ESTATES',
+      'Premium development by Metrostar Realty & Development Inc.',
       'Located in Ciudad Regina, Quezon City',
       'Exclusive two-unit development',
       'Modern contemporary architecture with minimalist aesthetic',
       'Underground facilities for electricity and auxiliary lines',
     ],
-    image: '/images/commonwealth/page02-img1.jpeg',
+    image: '/images/commonwealth/page02-img2.jpeg',
     imageAlt: 'ESQUARE ESTATES Commonwealth contemporary townhouse rendering',
   },
 
@@ -107,7 +107,7 @@ const commonwealth: Project = {
         icon: 'fas fa-vector-square',
         title: 'Spacious Functional Layouts',
         description:
-          '±245.25 sqm total gross floor area across two floors — four bedrooms, four toilets and baths, and a two-car carport designed for everyday living.',
+          '±150 sqm lot area with ±245.25 sqm gross floor area — four bedrooms, two toilets and baths, and a two-car carport designed for everyday living.',
       },
     ],
   },
@@ -119,9 +119,9 @@ const commonwealth: Project = {
       'Both Unit 1 and Unit 2 share identical specifications — a thoughtfully planned contemporary townhouse for discerning families.',
     stats: [
       { value: '±150', label: 'sqm lot area' },
-      { value: '±245.25', label: 'sqm gross floor area' },
+      { value: '±245', label: 'sqm gross floor area' },
       { value: '4', label: 'bedrooms' },
-      { value: '4', label: 'toilet & bath' },
+      { value: '2', label: 'toilet & bath' },
       { value: '2', label: 'floors' },
       { value: '2', label: 'car carport' },
     ],
@@ -188,10 +188,10 @@ const commonwealth: Project = {
       { id: 'floor-plans', label: 'Floor Plans' },
     ],
     items: [
-      { category: 'exterior', src: '/images/commonwealth/page01-img1.jpeg', label: 'Exterior rendering' },
-      { category: 'exterior', src: '/images/commonwealth/page02-img1.jpeg', label: 'Contemporary façade' },
-      { category: 'exterior', src: '/images/commonwealth/page03-img1.jpeg', label: 'Architectural detail' },
+      { category: 'exterior', src: '/images/commonwealth/page01-img2.jpeg', label: 'Exterior rendering' },
+      { category: 'exterior', src: '/images/commonwealth/page02-img2.jpeg', label: 'Contemporary façade' },
       { category: 'exterior', src: '/images/commonwealth/page03-img2.jpeg', label: 'Street perspective' },
+      { category: 'exterior', src: '/images/commonwealth/page05-img1.jpeg', label: 'Front elevation with gate' },
       { category: 'porch', src: '/images/commonwealth/page10-img1.jpeg', label: 'Porch & linear garden' },
       { category: 'carport', src: '/images/commonwealth/page11-img1.jpeg', label: 'Carport' },
       { category: 'patio', src: '/images/commonwealth/page12-img1.jpeg', label: 'Patio' },
@@ -393,13 +393,13 @@ const commonwealth: Project = {
       { value: '±245 sqm', label: 'Gross floor area' },
       { value: '2 units', label: 'Exclusive' },
     ],
-    cardImage: '/images/commonwealth/page01-img1.jpeg',
+    cardImage: '/images/commonwealth/page01-img2.jpeg',
     cardImageAlt: 'ESQUARE ESTATES Commonwealth exterior rendering',
   },
 
   jsonLd: {
     numberOfRooms: 4,
-    numberOfBathroomsTotal: 4,
+    numberOfBathroomsTotal: 2,
     floorSize: 245.25,
     addressLocality: 'Ciudad Regina, Quezon City',
   },

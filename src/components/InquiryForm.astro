@@ -66,7 +66,8 @@ const wrapperClass = [
           <label for={`${id}-type`}>What can we help you with? *</label>
           <select id={`${id}-type`} name="inquiry_type" required>
             <option value="" disabled selected>Select an option...</option>
-            <option value="Viewing request">Schedule a private viewing</option>
+            <option value="Commonwealth viewing">ESQUARE ESTATES Commonwealth viewing</option>
+            <option value="9 Handel viewing">9 Handel Homes viewing</option>
             <option value="Price list request">Project details &amp; availability</option>
             <option value="Reservation inquiry">Reservation inquiry</option>
             <option value="Accreditation - broker">Broker / agent accreditation</option>
@@ -78,7 +79,7 @@ const wrapperClass = [
 
       <div class="field">
         <label for={`${id}-msg`}>Message</label>
-        <textarea id={`${id}-msg`} name="message" rows="3" placeholder="Tell us your preferred viewing date, or ask anything about ESQUARE ESTATES Commonwealth..."></textarea>
+        <textarea id={`${id}-msg`} name="message" rows="3" placeholder="Tell us your preferred viewing date, project of interest, or any questions about our developments..."></textarea>
       </div>
 
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">

@@ -7,19 +7,11 @@ import { projects } from '../data/projects';
 import commonwealth from '../data/projects/commonwealth';
 
 const hero = commonwealth.hero;
-const propertyCard = [
-  { label: 'Property', value: 'ESQUARE ESTATES Commonwealth' },
-  { label: 'Location', value: 'Ciudad Regina, Quezon City' },
-  { label: 'Availability', value: '2 Exclusive Units' },
-  { label: 'Configuration', value: '4 Bedrooms' },
-  { label: 'Gross Floor Area', value: '245.25 sqm' },
-  { label: 'Style', value: 'Modern Contemporary' },
-];
 ---
 <BaseLayout
   title="ESQUARE ESTATES Commonwealth | Exclusive Townhouses in Ciudad Regina"
   description="Discover ESQUARE ESTATES Commonwealth — a limited two-unit contemporary townhouse enclave in Ciudad Regina, Quezon City. Schedule a private viewing today."
-  ogImage="/images/commonwealth/page01-img1.jpeg"
+  ogImage="/images/commonwealth/page01-img2.jpeg"
   activeNav="home"
 >
     <section class="hero hero-property">
@@ -43,24 +35,41 @@ const propertyCard = [
           <span class="hero-tag">{hero.tag}</span>
           <div class="hero-frame hero-frame--property">
             <img
-              src="/images/commonwealth/page01-img1.jpeg"
+              src="/images/commonwealth/page01-img2.jpeg"
               alt="ESQUARE ESTATES Commonwealth exterior architectural rendering"
               width="900"
               height="1125"
               loading="eager"
             >
-          </div>
-          <div class="property-card" aria-label="ESQUARE ESTATES Commonwealth property details">
-            {propertyCard.map((item) => (
-              <div class="pc-item">
-                <span class="pc-label">{item.label}</span>
-                <span class="pc-value">{item.value}</span>
+            <aside class="property-summary property-summary--dropdown" aria-label="ESQUARE ESTATES Commonwealth property summary">
+              <button type="button" class="ps-toggle" aria-expanded="false" aria-controls="propertySummaryPanel">
+                <span class="ps-toggle-label">ESQUARE ESTATES Commonwealth</span>
+                <i class="fas fa-chevron-down ps-chevron" aria-hidden="true"></i>
+              </button>
+              <div class="ps-panel" id="propertySummaryPanel">
+                <p class="ps-location">Ciudad Regina, Quezon City</p>
+                <ul class="ps-highlights">
+                  <li>2 Exclusive Units</li>
+                  <li>4 Bedrooms</li>
+                  <li>±245.25 sqm Gross Floor Area</li>
+                  <li>Modern Contemporary Architecture</li>
+                </ul>
+                <a href="#inquire" class="ps-cta">Schedule a Viewing <i class="fas fa-arrow-right arr"></i></a>
               </div>
-            ))}
+            </aside>
           </div>
         </div>
       </div>
     </section>
+
+    <script>
+      const summary = document.querySelector('.property-summary--dropdown');
+      const toggle = summary?.querySelector('.ps-toggle');
+      toggle?.addEventListener('click', () => {
+        const open = summary?.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    </script>
 
     <section class="trustbar">
       <div class="container">

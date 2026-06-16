@@ -2,7 +2,7 @@
 title: "Why Buying a Lot — Not a House — Makes More Sense for Most Filipino Families"
 description: "A house locks you into one design, one builder, and one moment in time. A lot gives you control. Here's why more Filipino families are choosing to buy land first."
 pubDate: 2026-06-10
-author: "Esquare Estates"
+author: "ESQUARE ESTATES"
 image: "/images/commonwealth/page03-img2.jpeg"
 tags: ["investment", "tips", "first-time buyers"]
 ---

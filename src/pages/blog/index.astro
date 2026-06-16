@@ -8,12 +8,12 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 <BaseLayout
-  title="Blog | Real Estate Insights — Esquare Estates"
+  title="Blog | Real Estate Insights — ESQUARE ESTATES"
   description="Property insights, investment guides, and premium real estate perspectives from ESQUARE ESTATES."
   activeNav="blog"
 >
   <section class="page-hero has-render has-texture">
-    <HeroBackdrop render="/images/commonwealth/page02-img2.jpeg" />
+    <HeroBackdrop render="/images/commonwealth/page03-img2.jpeg" />
     <div class="container inner hero-glass">
       <span class="eyebrow center">Blog</span>
       <h1>Real estate insights for buyers &amp; investors.</h1>
@@ -34,7 +34,7 @@ const posts = (await getCollection('blog')).sort(
             <article class="blog-card reveal">
               <div class="blog-card-img">
                 <img
-                  src={post.data.image ?? '/images/commonwealth/page02-img1.jpeg'}
+                  src={post.data.image ?? '/images/commonwealth/page02-img2.jpeg'}
                   alt={post.data.title}
                   loading="lazy"
                 />

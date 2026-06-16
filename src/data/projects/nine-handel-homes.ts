@@ -14,7 +14,7 @@ const nineHandelHomes: Project = {
     title: '9 Handel Homes | Japanese-Inspired Townhouses in Don Jose Heights Quezon City',
     description:
       'Discover 9 Handel Homes, an exclusive two-unit townhouse development in Don Jose Heights, Quezon City — Japanese-inspired architecture with modern contemporary design and minimalist elegance.',
-    ogImage: '/images/9-handel-homes/page01-img1.jpeg',
+    ogImage: '/images/9-handel-homes/page01-img2.jpeg',
   },
 
   hero: {
@@ -22,9 +22,9 @@ const nineHandelHomes: Project = {
     headline: 'Tranquility Meets Contemporary Living',
     subheadline:
       'An exclusive two-unit townhouse enclave inspired by Japanese architecture and modern contemporary design — light colors, clean lines, and refined minimalist elegance.',
-    render: '/images/9-handel-homes/page01-img1.jpeg',
-    frameImage: '/images/9-handel-homes/page01-img1.jpeg',
-    frameAlt: '9 Handel Homes interior artist illustration',
+    render: '/images/9-handel-homes/page01-img2.jpeg',
+    frameImage: '/images/9-handel-homes/page01-img2.jpeg',
+    frameAlt: '9 Handel Homes exterior artist illustration',
     tag: 'Don Jose Heights, Quezon City',
     trustStats: [
       { value: '2', label: 'Exclusive units' },
@@ -36,7 +36,7 @@ const nineHandelHomes: Project = {
       rows: [
         { label: 'Location', value: 'Don Jose Heights' },
         { label: 'Units', value: '2 only' },
-        { label: 'Developer', value: 'ESQUARE ESTATES' },
+        { label: 'Developer', value: 'Metrostar Realty' },
       ],
     },
   },
@@ -60,11 +60,11 @@ const nineHandelHomes: Project = {
     eyebrow: 'About the Development',
     headline: 'Japanese-inspired elegance in the heart of Quezon City.',
     paragraphs: [
-      'Welcome to 9 Handel Homes, the latest premium development by ESQUARE ESTATES, situated inside Don Jose Heights, Quezon City.',
+      'Welcome to 9 Handel Homes, the latest premium development by Metrostar Realty and Development Inc., situated inside Don Jose Heights, Quezon City.',
       'This exclusive two-unit townhouse project is designed with inspiration from Japanese architecture and modern contemporary design, featuring light colors and minimalist aesthetics that create a harmonious blend of elegance and simplicity.',
     ],
     features: [
-      'Premium development by ESQUARE ESTATES',
+      'Premium development by Metrostar Realty and Development Inc.',
       'Located in Don Jose Heights, Quezon City',
       'Exclusive two-unit development',
       'Japanese-inspired architecture with modern contemporary design',
@@ -113,9 +113,9 @@ const nineHandelHomes: Project = {
       'Both Unit 1 and Unit 2 share identical specifications — a thoughtfully planned Japanese-inspired townhouse for discerning families.',
     stats: [
       { value: '±222', label: 'sqm lot area' },
-      { value: '±153', label: 'sqm enclosed floor area' },
+      { value: '±153', label: 'sqm gross floor area' },
       { value: '4', label: 'bedrooms' },
-      { value: '4', label: 'toilet & bath' },
+      { value: '2', label: 'toilet & bath' },
       { value: '3', label: 'floors' },
       { value: '2', label: 'car carport' },
     ],
@@ -174,6 +174,7 @@ const nineHandelHomes: Project = {
     description: 'Explore the interior spaces and thoughtfully furnished rooms of 9 Handel Homes.',
     tabs: [
       { id: 'all', label: 'All' },
+      { id: 'exterior', label: 'Exterior' },
       { id: 'dining', label: 'Dining' },
       { id: 'kitchen', label: 'Kitchen' },
       { id: 'carport', label: 'Carport & Porch' },
@@ -182,6 +183,8 @@ const nineHandelHomes: Project = {
       { id: 'floor-plans', label: 'Floor Plans' },
     ],
     items: [
+      { category: 'exterior', src: '/images/9-handel-homes/page01-img2.jpeg', label: 'Exterior artist illustration' },
+      { category: 'exterior', src: '/images/9-handel-homes/page02-img1.jpeg', label: 'Front elevation with gate' },
       { category: 'dining', src: '/images/9-handel-homes/page08-img1.jpeg', label: 'Fully furnished dining area' },
       { category: 'dining', src: '/images/9-handel-homes/page08-img2.jpeg', label: 'Dining area detail' },
       { category: 'kitchen', src: '/images/9-handel-homes/page09-img1.jpeg', label: 'Fully furnished kitchen' },
@@ -412,14 +415,14 @@ const nineHandelHomes: Project = {
       { value: '4', label: 'Bedrooms' },
       { value: '2', label: 'Units only' },
     ],
-    cardImage: '/images/9-handel-homes/page01-img1.jpeg',
-    cardImageAlt: '9 Handel Homes interior artist illustration',
+    cardImage: '/images/9-handel-homes/page01-img2.jpeg',
+    cardImageAlt: '9 Handel Homes exterior artist illustration',
   },
 
   jsonLd: {
     numberOfRooms: 4,
-    numberOfBathroomsTotal: 4,
-    floorSize: 221.67,
+    numberOfBathroomsTotal: 2,
+    floorSize: 152.83,
     addressLocality: 'Don Jose Heights, Quezon City',
   },
 };

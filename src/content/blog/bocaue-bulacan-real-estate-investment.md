@@ -2,7 +2,7 @@
 title: "Why Bocaue, Bulacan Is One of the Best Places to Invest in Real Estate Right Now"
 description: "Infrastructure growth, proximity to the Philippine Arena, NLEx access, and rising land values make Bocaue one of Bulacan's most compelling real estate plays for 2026 and beyond."
 pubDate: 2026-06-06
-author: "Esquare Estates"
+author: "ESQUARE ESTATES"
 image: "/images/commonwealth/page04-img1.jpeg"
 tags: ["investment", "bulacan", "location"]
 ---
